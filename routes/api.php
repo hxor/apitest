@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'user'], function () {
 	Route::get('/list', 'UserController@index');
+	Route::get('/detail/{id}', 'UserController@show');
 	Route::post('/store', 'UserController@store');
 	Route::post('/update/{id}', 'UserController@update');
 	Route::post('/delete/{id}', 'UserController@destroy');
